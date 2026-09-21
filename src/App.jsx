@@ -25,7 +25,7 @@ const App = () => {
 
   const personalInfo = {
     name: "Sebastián Gallardo",
-    role: "Desarrollador Frontend Junior",
+    role: "Desarrollador Web & UI",
     description: "Desarrollador web enfocado en crear soluciones digitales útiles y accesibles. Me especializo en React y en transformar necesidades reales de los usuarios en interfaces limpias y funcionales.",
     email: "gallardosebas8668@gmail.com",
     github: "https://github.com/SAGS2002",
@@ -63,7 +63,6 @@ const App = () => {
         repo: null
       },
       visual: (
-        // Optimización visual SVG responsive
         <div className="w-full max-w-[280px] mx-auto">
              <svg viewBox="0 0 400 100" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto drop-shadow-2xl transform group-hover:scale-105 transition-transform duration-500">
           <defs>
@@ -121,7 +120,6 @@ const App = () => {
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['inicio', 'habilidades', 'proyectos', 'contacto'];
-      // Ajuste de offset para detectar mejor en movil
       const scrollPosition = window.scrollY + 150; 
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -143,7 +141,6 @@ const App = () => {
   };
 
   return (
-    // scroll-pt-20 asegura que el header no tape el titulo al hacer scroll
     <div className="min-h-screen bg-slate-900 text-slate-200 font-sans selection:bg-indigo-500 selection:text-white scroll-pt-20">
 
       {/* Navegación */}
@@ -151,8 +148,8 @@ const App = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex-shrink-0 cursor-pointer group" onClick={() => scrollToSection('inicio')}>
-              <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent group-hover:from-indigo-300 group-hover:to-cyan-300 transition-all">
-                &lt;SebasCodes/&gt;
+              <span className="text-xl sm:text-2xl font-mono font-bold text-purple-400 group-hover:text-purple-300 transition-all">
+                &lt;Vant /&gt;
               </span>
             </div>
             
@@ -211,7 +208,6 @@ const App = () => {
 
       {/* Hero Section */}
       <section id="inicio" className="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden px-4">
-        {/* Background Gradients - Adjusted sizes for mobile */}
         <div className="absolute top-20 -left-10 w-64 h-64 md:w-72 md:h-72 bg-indigo-500/20 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-20 -right-10 w-64 h-64 md:w-96 md:h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse delay-700" />
 
@@ -286,7 +282,6 @@ const App = () => {
             {projects.map((project, index) => (
               <div key={index} className="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-indigo-500/30 transition-all group flex flex-col lg:flex-row shadow-2xl">
 
-                {/* Visual del Proyecto */}
                 <div className="lg:w-2/5 bg-gradient-to-br from-indigo-900/50 to-slate-900 flex flex-col items-center justify-center p-8 sm:p-12 relative overflow-hidden min-h-[250px]">
                   <div className="absolute inset-0 bg-grid-white/[0.05] bg-[length:20px_20px]" />
 
@@ -301,7 +296,6 @@ const App = () => {
                   </div>
                 </div>
 
-                {/* Contenido */}
                 <div className="p-6 sm:p-8 lg:p-12 lg:w-3/5 flex flex-col justify-center">
                   <div className="mb-6">
                     <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">{project.title}</h3>
@@ -331,7 +325,6 @@ const App = () => {
                     </ul>
                   </div>
 
-                  {/* Botones Responsive */}
                   <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-auto">
                     {project.links.demo && (
                       <a
